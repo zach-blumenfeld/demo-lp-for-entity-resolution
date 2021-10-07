@@ -11,7 +11,7 @@ This repo contains 4 scripts which can be run sequentially to reproduce the demo
 the following three are scripts with commands that you can run in Neo4j browser.
 
 1. __prepare-data.ipynb__: Script for sampling and formatting the source data into CSVs containing Nodes and Relationships
-2. __ingest.cypher__: Script for loading the prepared CSVs into a Neo4j graph. Make sure to move the csv to the
+2. __ingest.cypher__: Script for loading the prepared CSVs into a Neo4j graph. Make sure to move the CSVs to the
 Neo4j import directory.  See documentation [here](https://neo4j.com/developer/guide-import-csv/#_reading_csv_files) 
 for details. 
 3. __model-config-and-training.cypher__: Link Prediction Pipeline configuration and model training. 
