@@ -51,7 +51,7 @@ CALL gds.alpha.ml.pipeline.linkPrediction.create('pipe');
 CALL gds.alpha.ml.pipeline.linkPrediction.addNodeProperty('pipe', 'degree', {
   orientation: "UNDIRECTED",
   mutateProperty: "degreeCentrality"
-})
+}) YIELD nodePropertySteps;
 
 //add L2 link feature
 CALL gds.alpha.ml.pipeline.linkPrediction.addFeature('pipe', 'l2', {
