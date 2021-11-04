@@ -17,3 +17,7 @@ for details.
 3. __model-config-and-training.cypher__: Link Prediction Pipeline configuration and model training. 
 4. __prediction-and-resolution.cypher__: Predict and write new entity linkages using the trained LP model.
 Create and query consolidated views for resolved persons.
+
+## Prerequisites:
+ - Notebook uses Python=3.9.7
+ - Neo4j Desktop >=1.4.8 & Graph Data Science (GDS) Library >=1.7.2
