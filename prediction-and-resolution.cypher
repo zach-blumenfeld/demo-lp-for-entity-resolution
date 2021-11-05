@@ -23,7 +23,7 @@ MATCH (n:User)-[r:SAME_AS_PREDICTED]->(m:User) RETURN n,r,m;
 //show predicted entity links ordered by probability
 MATCH (u1:User)-[r:SAME_AS_PREDICTED]->(u2:User)
 RETURN u1.userId AS user1, u2.userId AS user2, r.probability as entityLinkageProbability
-ORDER BY entityLinkageProbability DESC
+ORDER BY entityLinkageProbability DESC;
 
 /*///////////////////////
   Create Resolved Person Ids
@@ -49,4 +49,4 @@ WITH n.personId as personId, collect({
   website:w.url,
   firstTimeStamp: r.timeStamps[0],
   lastTimeStamp: last(r.timeStamps)}) AS webActivity, collect(DISTINCT n.userId) AS userIds
-RETURN personId, webActivity, userIds ORDER BY personId DESC
+RETURN personId, webActivity, userIds ORDER BY personId DESC;
