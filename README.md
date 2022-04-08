@@ -20,4 +20,4 @@ Create and query consolidated views for resolved persons.
 
 ## Prerequisites:
  - Notebook uses Python=3.9.7
- - Neo4j Desktop >=1.4.8 & Graph Data Science (GDS) Library >=1.7.2
+ - Neo4j Desktop >=1.4.8 & Graph Data Science (GDS) Library >=2.0.0
