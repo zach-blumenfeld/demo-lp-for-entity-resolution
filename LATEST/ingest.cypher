@@ -1,13 +1,30 @@
 // Create Constraints
-CREATE CONSTRAINT userId_not_null ON (user:User) ASSERT user.userId IS NOT NULL;
-CREATE CONSTRAINT userId_unique ON (user:User) ASSERT user.userId  IS UNIQUE;
+CREATE CONSTRAINT userId_not_null IF NOT EXISTS
+FOR (user:User)
+REQUIRE user.userId IS NOT NULL;
 
-CREATE CONSTRAINT url_not_null ON (website:Website) ASSERT website.url IS NOT NULL;
-CREATE CONSTRAINT url_unique ON (website:Website) ASSERT website.url IS UNIQUE;
+CREATE CONSTRAINT userId_unique IF NOT EXISTS
+FOR (user:User)
+REQUIRE user.userId  IS UNIQUE;
 
+CREATE CONSTRAINT url_not_null IF NOT EXISTS
+FOR (website:Website)
+REQUIRE website.url IS NOT NULL;
+
+CREATE CONSTRAINT url_unique IF NOT EXISTS
+FOR (website:Website)
+REQUIRE website.url IS UNIQUE;
+
+// Visualise the schema of the data
 CALL db.schema.visualization();
 
-//load users
+/*///////////////////////
+// Data Loading
+// You can use `file:///` if you're running this example locally.
+// For AuraDS, see: https://www.neo4j.com/docs/aura/aurads/importing-data/load-csv/
+*////////////////////////
+
+// Load Users
 LOAD CSV WITH HEADERS FROM 'file:///users.csv' AS row
 MERGE (user:User {userId:row.uid})
 RETURN count(user);
