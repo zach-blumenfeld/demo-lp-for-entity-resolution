@@ -131,8 +131,8 @@ RETURN
     modelInfo.metrics.AUCPR.outerTrain AS trainGraphScore,
     modelInfo.metrics.AUCPR.test AS testGraphScore;
 
-// (Optional) Train model with true class ration approach
-// changes AUCPR. See docs for more details: https://neo4j.com/docs/graph-data-science/current/algorithms/ml-models/linkprediction/#_class_imbalance
+// (Optional) Train model with true class ration approach that changes AUCPR.
+// reference - https://neo4j.com/docs/graph-data-science/current/machine-learning/linkprediction-pipelines/#linkprediction-pipelines-classimbalance
 CALL gds.beta.pipeline.linkPrediction.train(
   'er-projection',
   {
