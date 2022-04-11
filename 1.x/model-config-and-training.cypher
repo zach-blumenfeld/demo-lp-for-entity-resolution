@@ -101,7 +101,7 @@ RETURN
   modelInfo.metrics.AUCPR.test AS testGraphScore;
 
 // (optional) train model with true class ration approach
-// changes AUCPR. See docs for more details: https://neo4j.com/docs/graph-data-science/current/algorithms/ml-models/linkprediction/#_class_imbalance
+// changes AUCPR. See docs for more details: https://neo4j.com/docs/graph-data-science/1.8/algorithms/ml-models/linkprediction/#_class_imbalance
 CALL gds.alpha.ml.pipeline.linkPrediction.train( 'er-projection', {
     modelName: 'entity-linkage-model-imb',
     pipeline: 'er-pipe',
